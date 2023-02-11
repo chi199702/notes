@@ -1,7 +1,3 @@
-<div style="text-align:center;font-size:30px"><b>Linux</b></div>
-
-
-
 ## 一、Linux 发展历史
 
 UNIX 和 Linux 是父子关系，Linux 是 UNIX 的发行版，除了 Linux 以外还有其他的 UNIX 发行版，但是其他的发行版都依靠特定的操作系统平台，硬件价格昂贵。
