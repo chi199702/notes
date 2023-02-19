@@ -948,7 +948,7 @@ int printf( const char *restrict format, ... );
 
 int sprintf(char *string, char *format [,argument,...]);
 
-int fprintf (FILE* stream, const char*format, [argument])
+int fprintf (FILE* stream, const char* format, [argument])
 
 int scanf(const char * restrict format,...);
 
