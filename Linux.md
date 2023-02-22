@@ -3016,7 +3016,7 @@ old
 
 > 环境变量配置文件中主要是定义对系统的操作环境生效的系统默认环境变量，比如PATH、HISTSIZE、PS1、HOSTNAME等默认环境变量。
 
-![image-20230205010250910](D:\typora\images\image-20230205010250910.png)
+![image-20230205010250910](https://github.com/chi199702/notes/blob/main/image/image-20230205010250910.png?raw=true)
 
 上图中，前面的配置文件调用后面的配置文件，后面的配置文件重新定义的变量会覆盖前面的变量，所以一般用追加的方式补充环境变量，比如环境变量 PATH
 
@@ -3954,7 +3954,7 @@ echo "The sum is: $s"
 
 ### 1. 服务介绍
 
-![image-20230205010404399](D:\typora\images\image-20230205010404399.png)
+![image-20230205010404399](https://github.com/chi199702/notes/blob/main/image/image-20230205010404399.png?raw=true)
 
 + 独立的服务：服务单独运行于内存中，直接可以调用
 + 基于 xineted 的服务：这些服务藏于 xineted 后面，接受 xineted 的管理，不直接运行于内存中，要想调用这些服务，必须通过 xineted 来调用，所以调用速度较慢
@@ -4090,7 +4090,7 @@ vi /etc/init.d/apache
 
 ### 4. 服务管理总结
 
-![image-20230205010454276](D:\typora\images\image-20230205010454276.png)
+![image-20230205010454276](https://github.com/chi199702/notes/blob/main/image/image-20230205010454276.png?raw=true)
 
 ## 十二、系统管理
 
@@ -4702,7 +4702,7 @@ hiddenmenu
 
 ### 2. 系统修复模式
 
-![image-20230205010613446](D:\typora\images\image-20230205010613446.png)
+![image-20230205010613446](https://github.com/chi199702/notes/blob/main/image/image-20230205010613446.png?raw=true)
 
 按 e （如果 grub 加密则需要先输入 grub 密码），然后选择第 2 项可以进入单用户模式，在单用户模式下可以进行：
 
@@ -4711,7 +4711,7 @@ hiddenmenu
 
 ------
 
-![image-20230205010640049](D:\typora\images\image-20230205010640049.png)
+![image-20230205010640049](https://github.com/chi199702/notes/blob/main/image/image-20230205010640049.png?raw=true)
 
 进入光盘模式后，再把整个系统挂载到光盘目录下，然后从光盘目录转换成系统根目录就可以操作系统的任何文件，直接穿透了系统！！！这里由于操作偏门就不再记录过多的笔记！！！
 
@@ -4732,7 +4732,7 @@ sh-4.1# cp etc/inittab /etc/inittab
 #复制inittab文件到指定位置
 ```
 
-![image-20230205010753438](D:\typora\images\image-20230205010753438.png)
+![image-20230205010753438](https://github.com/chi199702/notes/blob/main/image/image-20230205010753438.png?raw=true)
 
 > 总结：
 >
@@ -4748,11 +4748,11 @@ sh-4.1# cp etc/inittab /etc/inittab
 
 2. 增量备份（常用）
 
-   ![image-20230205010831441](D:\typora\images\image-20230205010831441.png)
+   ![image-20230205010831441](https://github.com/chi199702/notes/blob/main/image/image-20230205010831441.png?raw=true)
 
 3. 差异备份
 
-   ![image-20230205010843637](D:\typora\images\image-20230205010843637.png)
+   ![image-20230205010843637](https://github.com/chi199702/notes/blob/main/image/image-20230205010843637.png?raw=true)
 
 ### 2. 备份相关命令
 
