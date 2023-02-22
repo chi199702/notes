@@ -31,7 +31,7 @@
 | README.md          | 项目 README.md 文件                                          |
 | run.sh             | 项目运行脚本                                                 |
 | src                | 项目源代码位置(头文件和源文件都应该放在这里)                 |
-| src/CMakeLists.txt | 源代码目录下的 CMakeLists.txt，可以不存在                    |
+| src/CMakeLists.txt | 子模块目录下的 CMakeLists.txt，每个模块都应该拥有自己独立的 CMakeLists.txt |
 
 ## 2. 动态库/静态库
 
