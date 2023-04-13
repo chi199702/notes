@@ -455,6 +455,14 @@
     [cmake 的 aux_source_directory](https://blog.csdn.net/sinat_31608641/article/details/122373670)
 
     将 dir 目录下的所有源文件都读取到变量`varname`中。
+    
+16. 让目标程序支持调试
+
+    ```cmake
+    set(CMAKE_BUILD_TYPE "Debug")
+    set(CMAKE_C_FLAGS_DEBUG "$ENV{CFLAGS} -O0 -Wall -g -ggdb")
+    set(CMAKE_C_FLAGS_RELEASE "$ENV{CFLAGS} -O3 -Wall")
+    ```
 
 # 三、相关变量
 
