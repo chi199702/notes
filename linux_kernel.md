@@ -50,11 +50,13 @@ Linux 系统的基础是内核、C 库、工具集和系统的基本工具，**�
 
 > 进程是处于执行期的程序以及相关资源的总称
 
+### 1. 进程描述符
+
 内核通过**双向循环链表**来存储进程描述符，进程描述符**完整**的描述了一个正在执行的程序：它打开的文件、挂起的信号、进程的地址空间、进程状态等。
 
 内核会为每个进程分配一个内核栈，当进程陷入内核时，系统调用函数使用的是内核栈。
 
-![123](https://raw.githubusercontent.com/chi199702/notes/main/image/thread_kernel_stack.png)
+![thread kernel stack](https://raw.githubusercontent.com/chi199702/notes/main/image/thread_kernel_stack.png)
 
 ```c
 union thread_union {
@@ -63,7 +65,14 @@ union thread_union {
 }
 ```
 
-`struct thread_info`位于栈底，和内核栈**共享同一片空间**。
+`struct thread_info`位于栈底，和内核栈**共享同一片空间**(可能是为了节省空间)。
 
-`struct thread_info`
+`struct thread_info`有指向进程描述符的`struct task_struct*`，后者有指向内核栈底的`void* stack`
 
+### 2. 进程状态
+
++ TASK_RUNNING，进程正在运行或在可执行队列中等待被调度
++ TASK_INTERRUPTIBLE，进程被阻塞，等待某些条件达成后被唤醒，**也可被信号提前唤醒**，唤醒后进入 TASK_RUNNING 状态
++ TASK_UNINTERRUPTIBLE，和 TASK_INTERRUPTIBLE 的区别在于**不可被信号提前唤醒**，使用得较少
++ _TASK_TRACED，被其他进程跟踪的进程，例如通过 ptrace 对调试程序进行跟踪
++ _TASK_STOPPED，进程停止运行，通过发生在(调试时)接收到 SIGSTOP/SIGTSTP/SIGTTIN/SIGTTOU 等信号时
