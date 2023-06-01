@@ -52,7 +52,18 @@ Linux 系统的基础是内核、C 库、工具集和系统的基本工具，**�
 
 内核通过**双向循环链表**来存储进程描述符，进程描述符**完整**的描述了一个正在执行的程序：它打开的文件、挂起的信号、进程的地址空间、进程状态等。
 
-内核为每个进程分配一个内核栈，当进程陷入系统调用时使用的是内核栈。
+内核会为每个进程分配一个内核栈，当进程陷入内核时，系统调用函数使用的是内核栈。
 
+![123](https://raw.githubusercontent.com/chi199702/notes/main/image/thread_kernel_stack.png)
 
+```c
+union thread_union {
+    struct thread_info thread_info;
+    unsigned long stack[THREAD_SIZE / sizeof(long)];
+}
+```
+
+`struct thread_info`位于栈底，和内核栈**共享同一片空间**。
+
+`struct thread_info`
 
