@@ -478,7 +478,7 @@
 
    > 这种情况发生在项目使用系统存在的第三方库时，无关项目内部头文件存放位置问题。
 
-   使用第三方库头文件时，路径应该写成`#include<library_name/xxxx.h>`，因为一般第三方头文件都是放在`/usr/local/include/library_name/`下，系统只会搜索到 include ，不会递归搜索下面的子目录。
+   使用第三方库头文件时，路径应该写成`#include<library_name/xxxx.h>`，因为第三方库的头文件一般都是放在`/usr/local/include/library_name/`下，系统只会搜索到 include ，不会递归搜索下面的子目录。
 
    当头文件存放位置不在系统默认的搜索路径时，可以使用`include_directories(path)`来手动指定路径。
 
@@ -500,4 +500,4 @@
 
    [Linux下GCC 编译时为什么要指定链接库？如何指定链接库 ？](https://blog.csdn.net/lee244868149/article/details/38707127)
 
-   即使第三方库已经放在了`/usr/local/lib/`等系统搜索目录下，也需要手动指定使用哪个库。因为 gcc 默认只载入 c/c++ 标准库，其它的库也载入的话程序就太大了，而且 gcc 也不会去寻找系统中的所有库，所以需要使用`target_link_libraries`手动指出用了哪个库。还需要注意的是`.so`大多只是一个链接，链接到`.so.x`这样的真正动态库，而`ld`只会搜索`.so`文件，当只有`.so.x/.so.x.x.so`时，需要手动进行`ln -s`。
+   即使第三方库已经放在了`/usr/local/lib/`等系统搜索目录下，也需要手动指定程序使用了哪个库。因为 gcc 默认只载入 c/c++ 标准库，其它的库也载入的话程序就太大了，而且 gcc 也不会去寻找系统中的所有库，所以需要使用`target_link_libraries`手动指出用了哪个库。还需要注意的是`.so`大多只是一个链接，其会链接到`.so.x`这样的真正动态库，而`ld`只会搜索`.so`文件，当只有`.so.x/.so.x.x.so`时，需要手动进行`ln -s`。

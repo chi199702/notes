@@ -1520,7 +1520,7 @@ logout
    4. 卸载
    
       ```shell
-   [root@192 yum.repos.d]# yum -y remove 包名
+      [root@192 yum.repos.d]# yum -y remove 包名
       ```
    
    + remove 卸载
@@ -1554,7 +1554,7 @@ logout
       mv CentOS-Base.repo CentOS-Base.repo.bak
       mv CentOS-Debuginfo.repo CentOS-Debuginfo.repo.bak
       mv CentOS-Vault.repo CenOS-Vault.repo.bak
-   
+      
       # 修改光盘 yum 源文件
       vim CenOS-Media.repo
       ```
